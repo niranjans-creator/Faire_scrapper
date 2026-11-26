@@ -89,6 +89,13 @@ are stored under `%LOCALAPPDATA%\FaireScraper`.
 Microsoft Edge WebView2 Runtime must be installed on the Windows machine. The first build also
 installs the Chromium browser used by Playwright.
 
+### Build on GitHub without a Windows computer
+
+The repository includes `.github/workflows/build-windows.yml`. Push it to GitHub, open the
+**Actions** tab, choose **Build Windows application**, and select **Run workflow**. GitHub’s
+Windows runner will produce a downloadable `FaireScraper-Windows.zip` artifact containing the
+application folder.
+
 ## IMPORTANT: calibrate on real pages
 
 Faire's page structure isn't public and can change, and this project was written without

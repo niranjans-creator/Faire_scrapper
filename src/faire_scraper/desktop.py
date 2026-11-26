@@ -18,6 +18,9 @@ def main() -> None:
     os.environ.setdefault("FAIRE_PROFILE_DIR", str(data_dir / "faire_profile"))
     bundle_root = Path(getattr(sys, "_MEIPASS", Path(__file__).resolve().parents[2]))
     os.environ.setdefault("FAIRE_FRONTEND_DIR", str(bundle_root / "frontend"))
+    bundled_browsers = bundle_root / "ms-playwright"
+    if bundled_browsers.is_dir():
+        os.environ.setdefault("PLAYWRIGHT_BROWSERS_PATH", str(bundled_browsers))
     import webview
     from . import web
     server, port = web.build_server()
