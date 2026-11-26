@@ -1,0 +1,79 @@
+
+--- scraper run started ---
+usage: faire_scraper [-h] [-v] [--db DB] [--profile PROFILE]
+                     {login,collect,add,scrape,export,status} ...
+faire_scraper: error: unrecognized arguments: --profile /Users/apple/Downloads/faire-scraper/faire_profile --db /Users/apple/Downloads/faire-scraper/data/faire.db
+
+--- scraper run started ---
+usage: faire_scraper [-h] [-v] [--db DB] [--profile PROFILE]
+                     {login,collect,add,scrape,export,status} ...
+faire_scraper: error: unrecognized arguments: --profile /Users/apple/Downloads/faire-scraper/faire_profile --db /Users/apple/Downloads/faire-scraper/data/faire.db
+
+--- scraper run started ---
+usage: faire_scraper [-h] [-v] [--db DB] [--profile PROFILE]
+                     {login,collect,add,scrape,export,status} ...
+faire_scraper: error: unrecognized arguments: --profile /Users/apple/Downloads/faire-scraper/faire_profile --db /Users/apple/Downloads/faire-scraper/data/faire.db
+
+--- scraper run started ---
+usage: faire_scraper [-h] [-v] [--db DB] [--profile PROFILE]
+                     {login,collect,add,scrape,export,status} ...
+faire_scraper: error: unrecognized arguments: --profile /Users/apple/Downloads/faire-scraper/faire_profile --db /Users/apple/Downloads/faire-scraper/data/faire.db
+
+--- scraper run started ---
+13:14:08 INFO    1 URLs to scrape
+13:14:17 INFO    [1/1] Mucuna Pruriens Seed Powder - 4 oz (113 G)  (missing: brand_name, size_or_variant)
+13:14:20 INFO    Status: {'done': 3}
+
+--- scraper run started ---
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/apple/Downloads/faire-scraper/src/faire_scraper/__main__.py", line 4, in <module>
+    main()
+  File "/Users/apple/Downloads/faire-scraper/src/faire_scraper/cli.py", line 134, in main
+    a.fn(a)
+  File "/Users/apple/Downloads/faire-scraper/src/faire_scraper/cli.py", line 55, in cmd_scrape
+    scrape_pending(page, store, a.delay_min, a.delay_max,
+  File "/Users/apple/Downloads/faire-scraper/src/faire_scraper/scraper.py", line 34, in scrape_pending
+    urls = store.pending(retry_failed=retry_failed, include_done=refresh_done, run_id=run_id)
+  File "/Users/apple/Downloads/faire-scraper/src/faire_scraper/storage.py", line 64, in pending
+    return [r[0] for r in self.db.execute(q + " ORDER BY rowid", params)]
+sqlite3.OperationalError: no such column: rowid
+
+--- scraper run started ---
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/apple/Downloads/faire-scraper/src/faire_scraper/__main__.py", line 4, in <module>
+    main()
+  File "/Users/apple/Downloads/faire-scraper/src/faire_scraper/cli.py", line 134, in main
+    a.fn(a)
+  File "/Users/apple/Downloads/faire-scraper/src/faire_scraper/cli.py", line 55, in cmd_scrape
+    scrape_pending(page, store, a.delay_min, a.delay_max,
+  File "/Users/apple/Downloads/faire-scraper/src/faire_scraper/scraper.py", line 34, in scrape_pending
+    urls = store.pending(retry_failed=retry_failed, include_done=refresh_done, run_id=run_id)
+  File "/Users/apple/Downloads/faire-scraper/src/faire_scraper/storage.py", line 64, in pending
+    return [r[0] for r in self.db.execute(q + " ORDER BY rowid", params)]
+sqlite3.OperationalError: no such column: rowid
+
+--- scraper run started ---
+13:21:30 INFO    Run b047a0139a71: 1 URLs to scrape
+13:21:39 INFO    [1/1] Organic Jojoba Body Oil 4 oz  (missing: brand_name, size_or_variant)
+13:21:44 INFO    Status: {'done': 4}
+
+--- scraper run started ---
+13:26:20 INFO    Run ffac6ec2f9fd: 0 URLs to scrape
+13:26:21 INFO    Status: {'done': 4}
+
+--- scraper run started ---
+13:26:30 INFO    Run ae711347f238: 0 URLs to scrape
+13:26:30 INFO    Status: {'done': 4}
+
+--- scraper run started ---
+13:27:10 INFO    Run 00ddddce5494: 1 URLs to scrape
+13:27:18 INFO    [1/1] 2 oz Sea Salt Sweetpotato Fries  (missing: brand_name, size_or_variant)
+13:27:22 INFO    Status: {'done': 5}

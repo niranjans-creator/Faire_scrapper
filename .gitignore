@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+faire_profile/
+data/*.db
+data/*.csv
+data/*.jsonl
+data/*.xlsx
+data/raw/
+data/dashboard-auth.json
+.venv/

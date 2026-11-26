@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faire Scraper · Workspace</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section class="auth-gate" id="auth-gate">
+      <div class="auth-card glass-card">
+        <div class="brand-mark"><span>f</span></div>
+        <p class="eyebrow warm">PRIVATE SCRAPER WORKSPACE</p>
+        <h1 id="auth-title">Sign in to Faire Scraper</h1>
+        <p id="auth-help">Your app password protects the dashboard. Your Faire password is never stored here.</p>
+        <form id="auth-form"><input id="auth-password" type="password" minlength="10" placeholder="App password" required /><button class="primary-button" type="submit" id="auth-submit">Sign in</button><div class="auth-error" id="auth-error"></div></form>
+      </div>
+    </section>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Primary navigation">
+        <div class="brand-mark" aria-label="Faire Scraper home"><span>f</span></div>
+        <nav class="nav-stack">
+          <button class="nav-item active" aria-label="Overview" data-view="overview"><span class="nav-icon">◫</span><span class="nav-label">Overview</span></button>
+          <button class="nav-item" aria-label="Queue" data-view="queue"><span class="nav-icon">☷</span><span class="nav-label">Queue</span></button>
+          <button class="nav-item" aria-label="Products" data-view="products"><span class="nav-icon">▤</span><span class="nav-label">Products</span></button>
+          <button class="nav-item" aria-label="Exports" data-view="exports"><span class="nav-icon">⇩</span><span class="nav-label">Exports</span></button>
+        </nav>
+        <div class="sidebar-bottom">
+          <button class="nav-item" aria-label="Notifications"><span class="nav-icon">♢</span></button>
+          <button class="nav-item" aria-label="Settings"><span class="nav-icon">⚙</span></button>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">FAIRE CATALOG WORKSPACE</p>
+            <h1>Scraper overview</h1>
+          </div>
+          <div class="topbar-actions">
+            <button class="icon-button" aria-label="Search">⌕</button>
+            <button class="icon-button" aria-label="Notifications">♧<span class="notification-dot"></span></button>
+            <div class="avatar">FS</div>
+          </div>
+        </header>
+
+        <section class="hero-grid">
+          <article class="hero-card glass-card">
+            <div class="hero-copy">
+              <p class="eyebrow warm">AUTOMATED CATALOG COLLECTION</p>
+              <h2>Turn product pages<br /><em>into clean data.</em></h2>
+              <p class="hero-text">Queue Faire product URLs, run a careful scrape, and keep every result ready for export.</p>
+              <button class="primary-button" id="start-scrape">Start scraping <span>↗</span></button>
+            </div>
+            <div class="hero-orb orb-one"></div>
+            <div class="hero-orb orb-two"></div>
+            <div class="hero-grid-lines"></div>
+            <div class="hero-status"><span class="pulse"></span><span id="hero-status">Ready for your next run</span></div>
+          </article>
+
+          <div class="side-stack">
+            <article class="chart-card glass-card">
+              <div class="card-heading"><div><p class="eyebrow">RUN ACTIVITY</p><h3>Scrape health</h3></div><span class="live-pill"><span class="live-dot"></span>Live</span></div>
+              <div class="chart-wrap">
+                <svg class="activity-chart" viewBox="0 0 500 150" role="img" aria-label="Scrape activity chart">
+                  <defs><linearGradient id="chartFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ff8847" stop-opacity=".32"/><stop offset="1" stop-color="#ff8847" stop-opacity="0"/></linearGradient></defs>
+                  <path class="chart-fill" d="M0 126 C28 113 37 90 65 104 S101 122 130 85 S165 54 190 95 S224 135 254 100 S289 35 319 71 S351 126 382 82 S421 31 448 57 S474 86 500 48 L500 150 L0 150Z"/>
+                  <path class="chart-line" d="M0 126 C28 113 37 90 65 104 S101 122 130 85 S165 54 190 95 S224 135 254 100 S289 35 319 71 S351 126 382 82 S421 31 448 57 S474 86 500 48"/>
+                </svg>
+                <div class="chart-labels"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
+              </div>
+            </article>
+            <article class="mini-card glass-card">
+              <div><p class="eyebrow">LAST RUN</p><strong id="last-run">Not started</strong><span class="muted">No active session</span></div>
+              <div class="mini-ring"><span id="success-rate">—</span><small>success</small></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="metric-row" aria-label="Scraper statistics">
+          <article class="metric-card accent-card"><span class="metric-icon">↗</span><div><span class="metric-label">Products scraped</span><strong id="done-count">0</strong><span class="metric-trend positive">Catalog output</span></div></article>
+          <article class="metric-card"><span class="metric-icon purple">◎</span><div><span class="metric-label">Waiting in queue</span><strong id="pending-count">0</strong><span class="metric-trend">Ready to process</span></div></article>
+          <article class="metric-card"><span class="metric-icon yellow">!</span><div><span class="metric-label">Needs attention</span><strong id="failed-count">0</strong><span class="metric-trend">Failed attempts</span></div></article>
+          <article class="metric-card"><span class="metric-icon green">✓</span><div><span class="metric-label">Fields captured</span><strong id="field-count">—</strong><span class="metric-trend">Across completed items</span></div></article>
+        </section>
+
+        <section class="workspace-grid">
+          <article class="queue-panel glass-card">
+              <div class="section-heading"><div><p class="eyebrow">COLLECTION QUEUE</p><h3>URLs to process</h3></div><div class="button-group"><button class="ghost-button" id="refresh">Refresh</button><button class="ghost-button" id="pause-scrape">Pause</button><button class="ghost-button" id="resume-scrape">Resume</button><button class="ghost-button danger" id="stop-scrape">Stop</button></div></div>
+            <div class="queue-input-wrap"><textarea id="url-input" rows="3" placeholder="Paste one Faire URL per line..."></textarea><button class="primary-button small" id="add-urls">Add to queue</button></div>
+            <div class="upload-row"><label class="upload-button" for="csv-input"><span>⇧</span> Upload CSV</label><input id="csv-input" type="file" accept=".csv,text/csv" /><span class="upload-help">Use a <code>url</code> column or include Faire product links anywhere in the file.</span></div>
+            <div class="queue-list" id="queue-list"><div class="empty-state">Your queue is waiting for its first URL.</div></div>
+          </article>
+          <article class="products-panel glass-card">
+            <div class="section-heading"><div><p class="eyebrow">RECENT OUTPUT</p><h3>Scraped products</h3></div><div class="button-group"><button class="ghost-button" id="export-csv">CSV</button><button class="ghost-button" id="export-xlsx">XLSX</button><button class="ghost-button" id="export-jsonl">JSONL</button></div></div>
+            <div class="product-list" id="product-list"><div class="empty-state">Completed products will appear here.</div></div>
+            <div class="log-panel"><div class="eyebrow">LIVE LOG</div><pre id="scrape-log">Waiting for a run…</pre></div>
+          </article>
+        </section>
+        <div class="toast" id="toast" role="status"></div>
+      </main>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
